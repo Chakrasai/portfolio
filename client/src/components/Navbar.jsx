@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Section, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import './Navbar.css';
 
@@ -16,25 +16,34 @@ function Navbar() {
     { name: "Resume", href: "resume" },
     { name: "Contact", href: "contact" },
   ];
+  const scrolltosection = (SectionId) => {
+    const element = document.getElementById(sectionId)
+    if(element){
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.scrollY - navbarHeight
 
-  const scrolltosection = (section) => {
-    document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
-  };
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      })
+    }
+  }
+
 
   return (
-    <div className="bg-gray-800 text-white">
-      <nav className="container mx-auto p-4 flex justify-between items-center">
+    <div className="fixed top-5 left-10 right-10 bg-gray-800 text-white">
+      <nav className="position-fixed container mx-auto p-5 flex justify-between items-center">
         <div className="flex items-center">
           <button onClick={() => scrolltosection("home")} className="text-white text-lg font-bold">
             Chakrasai Akuthota
           </button>
         </div>
-        <div className="flex space-x-4">
+        <div className="flex gap-20 space-x-4">
           {navcont.map((item) => (
             <button
               key={item.name}
               onClick={() => scrolltosection(item.href)}
-              className="text-white hover:text-gray-400"
+              className="button gap-20 text-white hover:text-gray-400"
             >
               {item.name}
             </button>

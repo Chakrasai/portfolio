@@ -9,9 +9,8 @@ function App() {
 
   return (
     <>
-    <section>
+    <section className='Appcontainer'>
       <Navbar />
-      hello
     </section>
     </>
   )
