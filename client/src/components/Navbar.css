@@ -1,14 +1,19 @@
-.navbar{
-    background-color: #1D1616;
+.navbar {
+  background-color: #1D1616;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure the navbar is on top */
+  height: 60px; /* Define a height for the navbar */
 }
-.button{
-    transition: all 0.5s ease;
-}
-.button:hover{
-    height: 30px;
-    width: 70px;
-    background-color: #005B41;
-    border-radius: 10px;
-    transform: scale(1.2); 
 
+.button {
+  transition: transform 0.5s ease, background-color 0.5s ease; /* Add transition for transform and background-color properties */
+}
+
+.button:hover {
+  transform: scale(1.2); /* Scale the button to 1.2 times its original size */
+  background-color: #005B41;
+  border-radius: 10px;
 }
