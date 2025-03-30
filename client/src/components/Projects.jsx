@@ -1,24 +1,52 @@
 import { GitlabIcon as GitHub } from "lucide-react";
 
-const ProjectCard = ({ title, description, tools, link }) => (
+const ProjectCard = ({ title, description, tools, link, deployLink }) => (
   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
     <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">{title}</h3>
     <p className="text-gray-600 dark:text-gray-300 mb-4">{description}</p>
     <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Tools: {tools}</p>
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center text-blue-500 hover:text-blue-600"
-    >
-      <GitHub size={20} className="mr-2" />
-      View on GitHub
-    </a>
+    <div className="flex space-x-4">
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center text-blue-500 hover:text-blue-600"
+      >
+        <GitHub size={20} className="mr-2" />
+        View on GitHub
+      </a>
+      {deployLink && (
+        <a
+          href={deployLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-green-500 hover:text-green-600"
+        >
+          <span className="mr-2">🚀</span>
+          Live Demo
+        </a>
+      )}
+    </div>
   </div>
 );
 
 const Projects = () => {
   const projects = [
+    {
+      title: "Chat Application Using MERN Stack",
+      description:
+        "Developed a real-time chat application using the MERN stack and WebSocket for instant messaging. Deployed the backend on Render and the frontend on Vercel, ensuring a seamless user experience.",
+      tools: "MongoDB, Express.js, React.js, Node.js, WebSocket, Docker",
+      link: "https://github.com/Chakrasai/chat",
+      deployLink: "https://chat-tawny-two.vercel.app/",
+    },
+    {
+      title: "Email Spam Detection using Machine Learning",
+      description:
+        "Developed a machine learning model to detect spam emails with high accuracy. Utilized natural language processing techniques to preprocess email text data and trained a classifier using various algorithms.",
+      tools: "Python, Scikit-learn, NLTK, Pandas,Reactjs,Nodejs",
+      link: "https://github.com/Chakrasai/spam",
+    },
     {
       title: "Simple E-commerce site (Frontend)",
       description:
@@ -40,13 +68,6 @@ const Projects = () => {
       tools: "MongoDB, Express.js, React.js, Node.js",
       link: "https://github.com/Chakrasai/blogger",
     },
-    {
-      title: "Email Spam Detection using Machine Learning",
-      description:
-        "Developed a machine learning model to detect spam emails with high accuracy. Utilized natural language processing techniques to preprocess email text data and trained a classifier using various algorithms.",
-      tools: "Python, Scikit-learn, NLTK, Pandas,Reactjs,Nodejs",
-      link: "https://github.com/Chakrasai/spam",
-    },
   ];
 
   return (
@@ -64,4 +85,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
