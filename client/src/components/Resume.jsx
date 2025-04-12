@@ -26,8 +26,8 @@ const Resume = () => {
   ]
 
   const codingPlatforms = [
-    "LeetCode: 96 solved - leetcode.com/chakrasai",
-    "GeeksforGeeks: 60 solved - gfg.com/chakrasnsi1",
+    "LeetCode: 144 solved - leetcode.com/chakrasai",
+    "GeeksforGeeks: 74 solved - gfg.com/chakrasnsi1",
     "HackerRank: JAVA Silver 4 Stars, SQL Silver 4 Stars - hr.com/chakrasaiaku",
   ]
 
