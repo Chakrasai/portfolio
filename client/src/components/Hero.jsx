@@ -4,7 +4,7 @@ const Hero = () => {
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4 text-gray-800 dark:text-white">Chakrasai Akuthota</h1>
           <p className="text-xl mb-8 text-gray-600 dark:text-gray-300">
-            B.Tech Student | ReactJS | Python | Machine Learning
+            B.Tech Student | ReactJS | NodeJS | Machine Learning
           </p>
           <a
             href="#contact"
